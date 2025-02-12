@@ -1,0 +1,32 @@
+<!-- employee_management/templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Employee Management System</h1>
+
+    <!-- Button to add a new employee -->
+    <a href="{{ url_for('add_employee') }}">Add Employee</a>
+
+    <!-- Display Employees -->
+    <h2>Employee List</h2>
+    {% if employees %}
+        <ul>
+            {% for employee in employees %}
+                <li>
+                    {{ employee.emp_id }} - {{ employee.name }} - {{ employee.department }} - ${{ employee.salary }}
+                    <a href="{{ url_for('update_employee', emp_id=employee.emp_id) }}">Edit</a>
+                    <a href="{{ url_for('delete_employee', emp_id=employee.emp_id) }}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No employees found.</p>
+    {% endif %}
+</body>
+</html>

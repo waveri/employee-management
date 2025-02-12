@@ -1,0 +1,31 @@
+<!-- employee_management/templates/update_employee.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Employee</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Update Employee</h1>
+
+    <form method="post">
+        <label>Employee ID:</label>
+        <input type="text" name="emp_id" value="{{ employee.emp_id }}" readonly><br>
+
+        <label>Name:</label>
+        <input type="text" name="name" value="{{ employee.name }}" required><br>
+
+        <label>Department:</label>
+        <input type="text" name="department" value="{{ employee.department }}" required><br>
+
+        <label>Salary:</label>
+        <input type="number" name="salary" value="{{ employee.salary }}" required><br>
+
+        <button type="submit">Update Employee</button>
+    </form>
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

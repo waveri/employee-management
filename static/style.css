@@ -1,0 +1,32 @@
+/* employee_management/static/style.css */
+@font-face {
+    font-family: SFPRO;
+    src: url(SFPRODISPLAYREGULAR.OTF);
+}
+body {
+    font-family: SFPRO, Arial;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+form label {
+    display: inline-block;
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+form input {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
